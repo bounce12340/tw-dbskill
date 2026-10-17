@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-action（行動阻滯診斷）"
+  short_description: "診斷知道該做卻遲遲不做的心理與行動阻力，給出可立即執行的下一步"
+  default_prompt: "使用 $tw-action，診斷當前行動阻力並給出可立即執行的下一步。"

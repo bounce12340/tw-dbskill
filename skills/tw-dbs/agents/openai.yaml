@@ -1,0 +1,4 @@
+interface:
+  display_name: "dbs（Skill 導航）"
+  short_description: "根據問題與反饋在對話中推進任務，選擇、組合或對照正式 Skill，並支援編號執行與隱藏款查詢"
+  default_prompt: "使用 $dbs，根據我的問題和已有材料選擇下一步並直接繼續，說明實際使用的 Skill 名稱及用途；需要時組合或對照方法，也可以執行三位編號或查詢隱藏款。"

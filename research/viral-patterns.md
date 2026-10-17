@@ -1,0 +1,159 @@
+# 爆紅模式研究（2026-10-18，台北）
+
+資料：`viral-dataset.csv`（224 筆：X 130、YouTube Shorts 49、YouTube 長片 37、IG 5、Threads 3）。原始 YouTube 搜尋結果在 `raw-youtube-*.csv`。
+- X：情報蒐集角色 10/14–10/17 用 X API 抓的公開指標（`01-leads/*-raw-x.md`），讀取時間見各檔。
+- YouTube：2026-10-18 用 yt-dlp 搜尋「AI agent／Claude Code／一人公司／AI 創業」等關鍵字取得的公開觀看、讚、訂閱數。
+- IG／Threads：公開頁面瀏覽器讀取（數字欄位順序有些未確認），樣本很少。
+- 「倍數」＝觀看 ÷ 粉絲（或訂閱）。「收藏比」＝收藏 ÷ 讚。
+
+**寫法規則**：每個模式分「事實」（資料裡看得到的數字）與「推論」（我的判斷）。推論沒有因果證明。
+
+## 樣本限制（先讀）
+1. X 樣本集中在 10/15–10/17 三天，被「Amazon 封鎖 Grok Bot」單一事件拉高，主題有偏。
+2. 偵察員是挑「熱門」才記錄，存在倖存者偏差：看不到同樣寫法但沒紅的貼文（反例只能部分補）。
+3. YouTube 搜尋結果依 YouTube 排序，多為舊的長青影片，不代表近期。
+4. IG、Threads 幾乎沒有他人觀看數；TikTok、LinkedIn、Facebook **本次無資料**，那幾段只寫平台規則推論，標「無資料」。
+5. IG／Threads 樣本很小，差異多半在雜訊範圍內。
+
+---
+
+## 模式總表
+
+### P1｜可直接帶走的工具或 prompt（「存起來用」）
+- 機制：讀者覺得「之後要用」，按收藏而非讚，演算法把收藏當高價值訊號。
+- 事實：
+  - [@poteto 倒金字塔＋「複製這篇給你的 bot」](https://x.com/poteto/status/2111133080526495985)：觀看 256,653、讚 3,843、收藏 7,028（收藏比 1.83）。
+  - [@MinimalDuck 免費 Spam-Call Scrubber skill](https://x.com/MinimalDuck/status/2110712459405464057)：粉絲 11,753、觀看 4,330,671（368 倍）、收藏 14,161（收藏比 1.91）。
+  - [@gkxspace 七個資源連結包](https://x.com/gkxspace/status/2110967261406339263)：粉絲 58,586、觀看 115,207、收藏 1,540（收藏比 1.35）。
+  - [@AlexFinn「全自動」小生意](https://x.com/AlexFinn/status/2110851435223285909)：讚 779、收藏 1,558。
+- 平台：X、Threads、IG 輪播（推論）；Reels 要把工具放在說明或留言。
+- 用在 使用者：每支片配一份可複製的東西（prompt、檢查表、skill 檔）。Threads 最後一則與 IG 說明給「存起來」的理由。
+- 反例／風險：[@suyuan1711 Claude 訂閱共用中轉站](https://x.com/suyuan1711/status/2110982802795827577) 收藏 473、19 倍，但屬規避平台規則，不能學。工具要真的能用，否則傷信任。
+
+### P2｜真實數字＋第一人稱經驗
+- 機制：具體金額或數量讓人相信「這是做過的人」。
+- 事實：
+  - [@levelsio 六種護城河附自己收入與名單人數](https://x.com/levelsio/status/2111142856094265595)：觀看 191,369、收藏 2,512（收藏比 1.42）。
+  - [@tibo_maker「重來我不做 startup」附付給聯盟夥伴 3.7 萬美元](https://x.com/tibo_maker/status/2111049597619442085)：觀看 36,542、收藏 907（收藏比 2.27）。
+  - YouTube [How I Make $24,937/mo Posting YouTube Shorts](https://www.youtube.com/watch?v=V_t51u1tBJc)：訂閱 95,100、觀看 1,389,581（14.6 倍）。
+- 平台：全部可轉移。
+- 用在 使用者：用團隊真實紀錄（幾個 agent、每天幾支片、花多少運算資源、觀看多少），出處對到 team-facts.md。作者本業經驗是別人沒有的數字來源。
+- 反例／風險：數字不能誇大或捏造；收入類數字在台灣可能觸及公平交易法誇大問題。
+
+### P3｜搭上當下大事件，用小帳號角度補一刀
+- 機制：事件本身有流量，第一批「補充角度」被推薦。
+- 事實：
+  - [@niccruzpatane Amazon 封鎖 Grok Bot 代購](https://x.com/niccruzpatane/status/2110571616384213156)：粉絲 130,357、觀看 14,301,446（110 倍）。
+  - [@thecsguy 同事件二次擴散](https://x.com/thecsguy/status/2110693166059851836)：粉絲 5,419、觀看 3,710,444（685 倍）。
+  - [@buildwithrajath 引用 Tibo 開罵「先修 Codex」](https://x.com/buildwithrajath/status/2111000049086079089)：粉絲 1,641、觀看 17,273（10.5 倍）。
+- 平台：X 最強（引用貼文機制）；Threads 次之。Reels 製作週期長，晚一天就沒效（推論）。
+- 用在 使用者：當天大事件只做「使用者 角度一句話＋證據」的 X 引用貼文或 Threads，不必等影片。
+- 反例／風險：事件常有錯誤資訊，要回一手出處；不攻擊 Anthropic；別人的主張用「某某說」。
+
+### P4｜一句懸念或問題，讓人想回覆
+- 機制：開放式句子邀請猜測，回覆數衝高。
+- 事實：[@thsottiaux「Either we are out of ideas or we are cooking」](https://x.com/thsottiaux/status/2110971985417441512)：觀看 1,419,057、回覆 3,346，但收藏只有 387（收藏比 0.03）。
+- 平台：X、Threads。需要已有高關注度（推論：879K 粉絲的官方人物，小帳號難複製）。
+- 用在 使用者：只當串文第一則的鉤子，後面要有實際內容。
+- 反例／風險：純懸念沒有價值，收藏極低；小帳號用會像標題黨。
+
+### P5｜荒謬又具體的 agent 實驗畫面
+- 機制：有趣、好轉述、不用懂技術。
+- 事實：[@maxencefaldor 四個 Gemini agent 打 Minecraft](https://x.com/maxencefaldor/status/2111023397106770026)：粉絲 968、觀看 111,715（115 倍）。[@XFreeze 拍信用卡照給 bot 訂機票](https://x.com/XFreeze/status/2110606379249791280)：4.6 倍、131 萬觀看。
+- 平台：Reels、Shorts、TikTok 最適合（畫面驅動，推論）；X 附影片。
+- 用在 使用者：把團隊 agent 實際操作錄成 15–30 秒片段（無人臉、無品牌標誌）。
+- 反例／風險：信用卡、個資畫面要打碼。
+
+### P6｜「一句話解釋」的入門片
+- 機制：大量新手搜尋，長青流量。
+- 事實：YouTube [What is Claude Code?](https://www.youtube.com/watch?v=fl1DSmwQKKY)（175 秒）：訂閱 650,000、觀看 13,349,176（20.5 倍）、讚 7,392。[AI Agents, Clearly Explained](https://www.youtube.com/watch?v=FwOTs4UxQS4)：觀看 5,443,662。
+- 平台：YouTube Shorts／長片（搜尋），IG Reels。
+- 用在 使用者：做「XX 是什麼、我怎麼用」系列，標題直接是搜尋句。
+- 反例／風險：同題目競爭多；要有 自己的實例才有差異。
+
+### P7｜可規模化的清單體（N 個、N 步）
+- 事實：[@Saccc_c「我開源下我的方法」五步](https://x.com/Saccc_c/status/2110930332803575978)：粉絲 49,814、觀看 168,152（3.4 倍）、收藏 652。[@gregisenberg agent 工具垂直化清單](https://x.com/gregisenberg/status/2111176488162582933)：讚 445、收藏 711。
+- 反例：YouTube 簡中「八款 AI 工具」類短片多在 100 觀看以下（見 dataset）。
+- 推論：清單有效的前提是每一條都具體可用，不是清單形式本身。
+
+### P8｜重複發同一模板會被稀釋
+- 事實：YouTube 頻道（訂閱 780）連發十多支「零零後創業數字人直播」短片，每支 17–361 觀看（dataset，`ys.csv`）。
+- 推論：同主題、同模板、同時段連發會互搶曝光。維持一天一支 Reel 的規則是對的。
+
+### P9｜送東西換回覆（互動誘餌）
+- 事實：[@petergyang 回覆就有機會拿免費一個月](https://x.com/petergyang/status/2111122250820989217)：回覆 560、觀看 244,036、收藏 187。
+- 風險：Meta 守則限制「留言換東西」類互動誘餌（推論需查最新條款）；送贈品在台灣要注意抽獎辦法與稅務。要用時先問 使用者。
+
+### P10｜官方「作品集」展示
+- 事實：[@claudeai 六個作品串](https://x.com/claudeai/status/2111177834127601902)：觀看 611,309、讚 14,192、收藏 6,534。
+- 用在 使用者：做「團隊這週做出的 N 件事」串文；醫療教學案例與 使用者 本業相近，可延伸。
+
+---
+
+## 各平台比較
+| 平台 | 為什麼會紅（有證據的部分） | 證據 | 資料量 |
+|---|---|---|---|
+| X | 引用大事件（P3）、可收藏的工具與框架（P1）、真實數字（P2） | 110 倍的 Amazon 事件帖；poteto 收藏 7,028 | 130 筆，最多 |
+| YouTube Shorts／長片 | 搜尋型入門標題（P6）、收入數字標題（P2） | What is Claude Code? 1,334 萬（20.5 倍）；$24,937/mo 14.6 倍 | 86 筆 |
+| IG Reels | 推論：前 3 秒鉤子、留言關鍵字取得資源（denghao 2.7K 讚／1.9K 留言，欄位未確認） | @denghao.0304 貼文 | 5 筆，無他人觀看數 |
+| Threads | 對時事有立場的短文分享最多（推論） | 公開樣本不足 | 資料不足 |
+| TikTok | 無資料 | 無資料 | 0 |
+| LinkedIn | 無資料（推論：專業經驗、數字、雙語） | 無資料 | 0 |
+| Facebook | 無資料（目前由 IG 同步） | 無資料 | 0 |
+
+## 跨平台轉移矩陣
+| 模式 | X | Threads | IG Reels | YT Shorts | TikTok | LinkedIn | FB |
+|---|---|---|---|---|---|---|---|
+| P1 可帶走工具 | 強（證據） | 可（推論） | 放說明／留言 | 放說明 | 放說明 | 可 | 可 |
+| P2 真實數字 | 強（證據） | 可 | 可 | 強（證據） | 可 | 強（推論） | 可 |
+| P3 搭事件 | 強（證據） | 可（使用者 證據） | 弱（太慢） | 弱 | 弱 | 弱 | 弱 |
+| P4 懸念句 | 大帳號才有效 | 可當首則 | 封面字可用 | 標題可用 | 可 | 不適合 | 不適合 |
+| P5 荒謬實驗畫面 | 附影片可 | 弱 | 強（推論） | 強（推論） | 強（推論） | 弱 | 可 |
+| P6 入門解釋 | 弱 | 弱 | 可 | 強（證據） | 可 | 可 | 可 |
+| P7 具體清單 | 可（證據） | 可 | 輪播較佳 | 可 | 可 | 可 | 可 |
+| P8 避免重複模板 | 全平台適用 |
+| P9 互動誘餌 | 可（證據） | 守則風險 | 守則風險 | 不適合 | 守則風險 | 不適合 | 守則風險 |
+
+## 給 使用者的打分檢查（skill 使用）
+每支稿發布前打分，每項 0–2 分，總分 10 以上再送查核角色：
+1. 這支的賣點一句話說得出來嗎？
+2. 有可帶走的東西（P1）嗎？
+3. 有 使用者 或團隊的真實數字（P2），且 facts.md 有出處嗎？
+4. 前 3 秒（影片）或第一則（串文）有具體鉤子嗎？懸念後面有兌現嗎？
+5. 平台選對了嗎（看轉移矩陣）？
+6. 和最近 3 支是不是同模板、同時段（P8）？
+7. 標題或第一句有沒有觀眾會搜尋的詞（P6）？
+風險扣分：捏造或誇大數字、規避平台規則、互動誘餌、人臉或品牌標誌（直接退回）。
+
+---
+
+## 平台差異假設檢驗（2026-10-18）
+判定：支持／不支持／資料不足。「官方」指平台或主管機關自己的文件；第三方文章只當參考。
+
+| # | 假設 | 判定 | 證據 |
+|---|---|---|---|
+- IG／Threads：公開頁面瀏覽器讀取（數字欄位順序有些未確認），樣本很少。
+| H2 | LINE 分享看不到、封面要截圖也能讀 | 資料不足（機制合理） | 平台洞察看不到站外分享來源，無法量測。Mosseri 說「分享（sends）對觸及非追蹤者較重要」（[Social Media Today 轉述 Mosseri 2025-01 影片](https://www.socialmediatoday.com/news/instagram-shares-algorithm-insights-2025/738034/)），但這是站內私訊分享，不是 LINE。→ 先照做（成本低），不當事實寫 |
+| H3a | X／LinkedIn 的 AI 受眾多為英文，繁中觸及有限 | 部分支持 | 本次 X 樣本 129 則他人貼文：英文 92 則觀看中位數 16,294，中文 37 則中位數 7,843；但「觀看÷粉絲」中位數相近（0.17 vs 0.19），且中文樣本大多是簡中帳號，不是繁中。LinkedIn 無資料 |
+| H3b | TikTok／YouTube 有港、馬、中跨區受眾 | 資料不足 | yt-dlp 不提供觀眾地區；只能從 自己的 YouTube Studio 地區報表查 |
+| H4 | X／LinkedIn 應配合美國時段，而不是台北時段 | 資料不足 | 樣本不足。若主打英文受眾才有意義 → 英文 X 貼文試台北 21:00–23:00（美東早上） |
+| H5 | 各平台排序訊號不同 | 支持（官方） | IG：Mosseri 點名觀看時間、每觸及按讚數、每觸及分享數最重要，分享對非追蹤者較重要（同上連結）。X：2023 開源 heavy ranker 權重回覆 13.5、按讚 0.5、作者回覆的回覆 75（[twitter/the-algorithm-ml](https://github.com/twitter/the-algorithm-ml/blob/main/projects/home/recap/README.md)），現行 [xai-org/x-algorithm](https://github.com/xai-org/x-algorithm) 已換模型、未公布數值，但仍有 reply、dwell、share via DM 等項目。YouTube Shorts：官方說明看「觀看 vs 滑走」、平均觀看時間、觀看百分比（[YouTube Help](https://support.google.com/youtube/answer/11914225)）。TikTok：官方說明看互動、影片資訊、完整看完較長影片是強訊號，粉絲數不是直接因素（[TikTok Newsroom](https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you)）。LinkedIn：工程部落格說模型預測 skip、long dwell、留言、分享（[LinkedIn Engineering](https://www.linkedin.com/blog/engineering/feed/understanding-feed-dwell-time)）。「TikTok 前 1–2 秒」「LinkedIn 前三行」無官方數字 → 推論 |
+| H6 | X／LinkedIn／IG 放外部連結會降觸及，連結要放留言 | X：不支持官方證據／LinkedIn：資料不足／IG：不適用 | X 公開程式碼找不到連結懲罰，點擊是正向訊號（第三方逐行檢查，[xdoctor](https://xdoctor.app/learn/p2-reach/link-deboosting)）；有人轉述 Musk 說會降，未找到原文。LinkedIn 官方工程文件沒寫，降 50–70% 的說法來自第三方。IG 說明欄連結本來就不能點。→ A/B 測試：連結放本文 vs 第一則回覆 |
+| H7 | 台灣法規條文正確 | 支持（官方）並已修正風險檢查 | 見下方 |
+| H8 | 靜音觀看、繁中字幕、安全區 | 部分支持 | 第三方整理 IG 官方說明：低解析度、浮水印、靜音音訊、加邊框、以文字為主的畫面會降低 Reels 可見度（[Gyre](https://gyre.pro/blog/instagram-algorithm-updates-and-tips-to-boost-your-visibility)，未找到 IG 原文）。靜音觀看比例無官方數字。團隊已固定燒字幕卡，維持 |
+| H9 | 轉發其他平台的浮水印會被降權 | 支持（官方方向） | Mosseri 2025-01 表示 IG 會優先推原創內容（[CNBC](https://www.cnbc.com/2025/01/13/ahead-of-tiktok-ban-instagram-to-prioritize-original-content-mosseri.html)）；「浮水印被濾掉」「30 天 10 次轉發停止推薦」是第三方轉述，未找到原文。→ TikTok／IG 一律上傳無浮水印母檔 |
+
+### H7 法規查證（全國法規資料庫）
+- 藥事法第 65 條：非藥商不得為藥物廣告；違反依第 91 條第 1 項罰新台幣 20 萬至 500 萬元。
+- 藥事法第 69 條：非藥物不得為醫療效能之標示或宣傳；第 91 條第 2 項罰 60 萬至 2,500 萬元。第 70 條：採訪、報導或宣傳暗示或影射醫療效能者，視為藥物廣告。（[藥事法](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=l0030001)）
+- 食品安全衛生管理法第 28 條：食品不得為醫療效能之標示、宣傳或廣告，也不得不實、誇張或易生誤解（[§28](https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=28&pcode=L0040001)）；醫療效能違規依第 45 條罰 60 萬至 500 萬元（[食藥署處理原則](https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638466965041891744)）。
+- 業配揭露：公平會「薦證廣告之規範說明」：薦證者與廣告主有非一般大眾可合理預期之利益關係，應於廣告中充分揭露，社群推文、部落客、論壇都適用，涉公平交易法第 25 條（[公平會](https://law.ftc.gov.tw/law/LawContent.aspx?id=FL037059)）。
+- 抽獎：公平會「網路廣告案件處理原則」要求明示贈獎或抽獎的內容、參加辦法與限制條件（[公平會](https://www.ftc.gov.tw/internet/main/doc/docDetail.aspx?docid=12231&uid=165)）。中獎所得扣繳 10% 的說法來自搜尋摘要，未讀到財政部原文，標「待查」。
+- 健康食品管理法（「健康食品」字樣需認證）本次未重新查條文，維持原寫法並標「待查」。
+
+## 待 A/B 測試的假設（給數據分析角色）
+1. H1 Threads 語氣：同一題寫「自嘲提問版」與「立場陳述版」，隔天發，比觀看與回覆。
+2. H6 連結位置：X 與 Threads 連結放本文 vs 第一則回覆，各 3 次。
+3. H4 英文 X 時段：台北 21:30 vs 08:00。
+4. H2 封面截圖可讀性：封面主標字級大小兩版，比 IG 分享數。
+5. H3 雙語：X 同題繁中版 vs 英文版，比觀看÷粉絲。

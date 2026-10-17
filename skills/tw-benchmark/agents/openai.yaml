@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-benchmark（對標分析）"
+  short_description: "用五重過濾法篩選值得模仿的商業對標，並拆解可複用的具體做法"
+  default_prompt: "使用 $tw-benchmark，篩選值得模仿的商業對標並拆解可複用做法。"

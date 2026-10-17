@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-plain-writing（平鋪直敘寫作）"
+  short_description: "按事實順序撰寫或檢查產品與功能說明，內建清晰表達檢查，消除歧義並保留原意和使用者鎖定文字"
+  default_prompt: "使用 $tw-plain-writing，按事實與功能順序直接寫清當前物件，並執行內建的清晰表達檢查，核對主體、指代、條件與承諾強度，保留使用者鎖定的文字。"

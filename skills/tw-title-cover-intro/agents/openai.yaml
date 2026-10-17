@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-title-cover-intro（標題封面與開頭）"
+  short_description: "先定選題，再按拍攝狀態生成四平台標題、封面文字和影片開頭"
+  default_prompt: "使用 $tw-title-cover-intro，先和我確定選題與製作狀態，再生成我需要的文字標題、封面標題或影片開頭。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-resonate（文稿共鳴診斷）"
+  short_description: "診斷已寫稿件的共鳴斷點，定位原句並給出具體刪改建議"
+  default_prompt: "使用 $tw-resonate，檢查這篇已寫成的稿件哪裡沒有打中目標受眾，指出具體原句、共鳴斷點和刪改建議。聚焦稿件修改，不評估整體流量和商業價值。"

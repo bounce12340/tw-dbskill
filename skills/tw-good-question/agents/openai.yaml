@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-good-question（好問題改寫）"
+  short_description: "把模糊問題改寫為 Agent 可推理、可批評、可驗證的問題說明書"
+  default_prompt: "使用 $tw-good-question，把當前模糊問題改寫成可推理、可批評、可驗證的問題。"

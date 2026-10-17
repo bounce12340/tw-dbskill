@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-decision（決策記錄與覆盤）"
+  short_description: "把長期業務、關係或職業問題建成可回填、可覆盤的本機決策知識工程"
+  default_prompt: "使用 $tw-decision，把當前長期問題納入可回填、可覆盤的決策知識工程。"

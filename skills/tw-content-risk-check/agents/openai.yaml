@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-content-risk-check（內容發布風險檢查）"
+  short_description: "區分機器稽核與實質問題，給出最小修改和影片貼片文字"
+  default_prompt: "使用 $tw-content-risk-check 檢查這份內容，分別說明平台機器可能識別什麼、內容本身有什麼實質問題，並給出最小修改；確實需要補充影片語境邊界時，再生成真實準確的三行貼片小字。"

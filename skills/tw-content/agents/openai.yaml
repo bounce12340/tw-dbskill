@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-content（內容策劃）"
+  short_description: "診斷選題如何轉化為適合目標平台的內容，檢查形式、標題、結構與表達"
+  default_prompt: "使用 $tw-content，診斷當前選題或初稿如何轉化為目標平台內容。"

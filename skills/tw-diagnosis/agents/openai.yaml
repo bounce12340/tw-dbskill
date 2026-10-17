@@ -1,0 +1,4 @@
+interface:
+  display_name: "tw-diagnosis（商業診斷）"
+  short_description: "自動識別具體困境或全面檢查，定位商業模式中的關鍵問題"
+  default_prompt: "使用 $tw-diagnosis 診斷當前商業問題；根據使用者材料自動選擇合適的分析流程。"
