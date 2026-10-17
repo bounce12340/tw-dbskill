@@ -1,0 +1,8 @@
+{
+  "name": "tw-dbskill",
+  "description": "tw-dbskill marketplace",
+  "owner": { "name": "tw-dbskill maintainers" },
+  "plugins": [
+    { "name": "tw-dbskill", "source": "./", "description": "台灣繁中內容創作與一人公司 skill（CC BY-NC 4.0）" }
+  ]
+}

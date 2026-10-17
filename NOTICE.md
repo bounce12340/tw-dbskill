@@ -11,3 +11,4 @@
 - 未收錄上游的推文語料、知識庫（知识库/）與 books/，需要時請看上游。
 - 新增 research/（公開資料整理）與 shared/benchmarks.md；研究中引用的平台官方文件與法規連結均附出處。
 - 本專案與 dontbesilent 無隸屬或背書關係。
+- 新增多 agent 接入：AGENTS.md 索引、CLAUDE.md／GEMINI.md／Copilot／Cursor／Windsurf／Cline 轉接檔、Claude Code 外掛市集設定、Gemini 擴充套件設定、scripts/install.sh 與 install.ps1（同樣以 CC BY-NC 4.0 釋出）。
